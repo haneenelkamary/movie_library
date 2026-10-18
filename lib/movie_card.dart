@@ -94,16 +94,34 @@ class MovieCard extends StatelessWidget {
       ),
     );
 
-    return Container(
+        return Container(
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: theme.cardColor,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.08), blurRadius: 10, offset: const Offset(0, 4))],
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.08),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
       ),
       child: isGrid
-          ? Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [poster, Expanded(child: details)])
-          : Row(crossAxisAlignment: CrossAxisAlignment.start, children: [poster, Expanded(child: details)]),
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                poster,
+                details,
+              ],
+            )
+          : Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                poster,
+                Expanded(child: details),
+              ],
+            ),
     );
   }
 }
